@@ -1,10 +1,10 @@
 -- Projekt 4: SQL final tables
--- Replace `jmeno` and `prijmeni` in the final table names with your own values
--- before executing in the academy database.
+-- Finální názvy tabulek jsou nastaveny na `dominik_messer`.
+-- V případě potřeby je možné je změnit před spuštěním.
 
-DROP TABLE IF EXISTS t_jmeno_prijmeni_project_SQL_primary_final;
+DROP TABLE IF EXISTS t_dominik_messer_project_SQL_primary_final;
 
-CREATE TABLE t_jmeno_prijmeni_project_SQL_primary_final AS
+CREATE TABLE t_dominik_messer_project_SQL_primary_final AS
 WITH comparable_years AS (
     SELECT DISTINCT cp.payroll_year AS year_value
     FROM czechia_payroll cp
@@ -80,12 +80,12 @@ JOIN price_yearly pry
     ON cy.year_value = pry.year_value;
 
 
-DROP TABLE IF EXISTS t_jmeno_prijmeni_project_SQL_secondary_final;
+DROP TABLE IF EXISTS t_dominik_messer_project_SQL_secondary_final;
 
-CREATE TABLE t_jmeno_prijmeni_project_SQL_secondary_final AS
+CREATE TABLE t_dominik_messer_project_SQL_secondary_final AS
 WITH comparable_years AS (
     SELECT DISTINCT year_value
-    FROM t_jmeno_prijmeni_project_SQL_primary_final
+    FROM t_dominik_messer_project_SQL_primary_final
 ),
 year_range AS (
     SELECT

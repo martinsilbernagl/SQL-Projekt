@@ -17,8 +17,7 @@ evropských zemí.
 ## Jak použít
 
 1. Otevři `create_final_tables.sql`.
-2. Nahraď zástupné `jmeno` a `prijmeni` ve jménech finálních tabulek
-   svými hodnotami.
+2. Zkontroluj jména finálních tabulek (v aktuální verzi `dominik_messer`).
 3. Spusť skript nad akademickou databází s tabulkami:
    - `czechia_payroll`, `czechia_payroll_calculation`,
      `czechia_payroll_industry_branch`, `czechia_payroll_unit`,

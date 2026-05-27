@@ -1,5 +1,5 @@
 -- Projekt 4: research questions
--- All queries expect the tables from `create_final_tables.sql` to exist.
+-- Všechny dotazy očekávají existenci tabulek z `create_final_tables.sql` (jméno `dominik_messer`).
 
 -- Question 1
 -- Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
@@ -18,7 +18,7 @@ WITH wage_trend AS (
             industry_branch_code,
             industry_branch_name,
             average_payroll_czk
-        FROM t_jmeno_prijmeni_project_SQL_primary_final
+        FROM t_dominik_messer_project_SQL_primary_final
     ) wages
 )
 SELECT
@@ -43,14 +43,14 @@ WITH comparable_periods AS (
     SELECT
         MIN(year_value) AS first_year,
         MAX(year_value) AS last_year
-    FROM t_jmeno_prijmeni_project_SQL_primary_final
+    FROM t_dominik_messer_project_SQL_primary_final
 ),
 selected_food AS (
     SELECT
         year_value,
         price_category_name,
         average_price_czk
-    FROM t_jmeno_prijmeni_project_SQL_primary_final
+    FROM t_dominik_messer_project_SQL_primary_final
     WHERE price_category_name IN (
         'Mléko polotučné pasterované',
         'Chléb konzumní kmínový'
@@ -69,7 +69,7 @@ average_wage AS (
             year_value,
             industry_branch_code,
             average_payroll_czk
-        FROM t_jmeno_prijmeni_project_SQL_primary_final
+        FROM t_dominik_messer_project_SQL_primary_final
     ) wages
     GROUP BY year_value
 )
@@ -108,7 +108,7 @@ WITH price_trend AS (
             price_category_name,
             year_value,
             average_price_czk
-        FROM t_jmeno_prijmeni_project_SQL_primary_final
+        FROM t_dominik_messer_project_SQL_primary_final
     ) prices
 ),
 price_growth AS (
@@ -152,7 +152,7 @@ WITH wage_growth AS (
                 year_value,
                 industry_branch_code,
                 average_payroll_czk
-            FROM t_jmeno_prijmeni_project_SQL_primary_final
+            FROM t_dominik_messer_project_SQL_primary_final
         ) wages
         GROUP BY year_value
     ) wage_summary
@@ -175,7 +175,7 @@ price_growth AS (
                 year_value,
                 category_code,
                 average_price_czk
-            FROM t_jmeno_prijmeni_project_SQL_primary_final
+            FROM t_dominik_messer_project_SQL_primary_final
         ) prices
         GROUP BY year_value
     ) price_summary
@@ -212,7 +212,7 @@ WITH wage_growth AS (
                 year_value,
                 industry_branch_code,
                 average_payroll_czk
-            FROM t_jmeno_prijmeni_project_SQL_primary_final
+            FROM t_dominik_messer_project_SQL_primary_final
         ) wages
         GROUP BY year_value
     ) wage_summary
@@ -235,7 +235,7 @@ price_growth AS (
                 year_value,
                 category_code,
                 average_price_czk
-            FROM t_jmeno_prijmeni_project_SQL_primary_final
+            FROM t_dominik_messer_project_SQL_primary_final
         ) prices
         GROUP BY year_value
     ) price_summary
@@ -251,7 +251,7 @@ gdp_growth AS (
             ) / LAG(GDP) OVER (PARTITION BY country ORDER BY year) * 100,
             2
         ) AS gdp_growth_pct
-    FROM t_jmeno_prijmeni_project_SQL_secondary_final
+    FROM t_dominik_messer_project_SQL_secondary_final
     WHERE country = 'Czech Republic'
 )
 SELECT

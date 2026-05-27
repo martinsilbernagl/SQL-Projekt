@@ -9,7 +9,7 @@ a doplnit je o mezinárodní kontext (HDP, GINI, populace evropských zemí).
 
 ## Výstupy
 
-### Primární tabulka – `t_jmeno_prijmeni_project_SQL_primary_final`
+### Primární tabulka – `t_dominik_messer_project_SQL_primary_final`
 
 Sjednocuje data o průměrných mzdách podle odvětví (`czechia_payroll`)
 a průměrných cenách potravin (`czechia_price`) za **společné roky**
@@ -38,7 +38,7 @@ Filtry použité na zdrojová data:
 - Záznamy s `NULL` hodnotou mzdy nebo ceny jsou vyloučeny
 - Záznamy bez odvětví (`industry_branch_code IS NULL`) jsou vyloučeny
 
-### Sekundární tabulka – `t_jmeno_prijmeni_project_SQL_secondary_final`
+### Sekundární tabulka – `t_dominik_messer_project_SQL_secondary_final`
 
 Doplňkový datový podklad s makroekonomickými ukazateli evropských států
 ve stejném časovém rozmezí jako primární tabulka.
@@ -106,8 +106,7 @@ vyžaduje hlubší analýzu.
 ## Předpoklady a omezení
 
 - SQL je psáno pro MySQL/MariaDB (použití `YEAR()` funkce).
-- Finální názvy tabulek obsahují zástupné `jmeno` a `prijmeni` –
-  před spuštěním je nutné nahradit skutečnými hodnotami.
+- Finální názvy tabulek jsou `t_dominik_messer_project_SQL_primary_final` a `t_dominik_messer_project_SQL_secondary_final`.
 - Databáze není přiložena v repozitáři; SQL nebylo ověřeno exekucí
   proti reálným datům.
 - Zdrojové primární tabulky se nemodifikují – všechny transformace
