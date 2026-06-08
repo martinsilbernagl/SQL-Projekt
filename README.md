@@ -90,7 +90,6 @@ Interpretation: The output suggests that GDP, wages, and food prices often move 
 
 ## Repository Structure
 - `sql/` – SQL scripts for exploration, staging views, final tables, and research-question analysis
-- `docs/data_notes.md` – detailed data notes (data quality findings, assumptions, transformations, methodology notes, and analysis notes)
 - `README.md` – project overview and execution guide
 
 ### Research question queries
@@ -126,14 +125,7 @@ If you want to rebuild the project outputs from scratch, run the scripts in this
 - `t_*_primary_final.sql`, `t_*_secondary_final.sql` – build final tables
 - `11–15_q*.sql` – answer research questions using only final tables
 
-## Documentation
-Detailed methodology and data-quality notes are documented in:
-- `docs/data_notes.md`
-
 ## Notes / Assumptions
 - Raw source tables were **not modified**.
 - Data cleaning / interpretation fixes were handled in staging views and final-table logic.
 - Results may support or refute the research questions depending on the observed data.
-
-## Author
-Martin Silbernágl
